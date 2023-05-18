@@ -19,9 +19,12 @@ def search(text):
     request_result=requests.get( url, headers=headers, cookies=cookies)
     soup = BeautifulSoup(request_result.text,"html.parser")
     heading_object=soup.find_all('h3')
-    print(heading_object)
-    for info in heading_object:
+    """for info in heading_object:
         print(info.getText())
-        print("------")
+        print("------")"""
+    resList = ""
+    for info in heading_object:
+        resList = resList + info.getText()
+    return resList
 
-search("M4-est elárasztottota")
+print(search("Italy floods leave 13 dead and force 13,000 from their homes"))

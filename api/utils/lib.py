@@ -37,6 +37,8 @@ def domainCheck(url) :
             l2 = 0
     return (l1+l2)/2
 
+#def googleSearch(title):
+
 
 url= "https://www.origo.hu/tudomany/20230517-nem-ajanlja-a-szintetikus-es-a-termeszetes-edesitoszerek-hosszu-tavu-hasznalatat-a-who.html"
 print(capsCheck(extract_content(url)))
