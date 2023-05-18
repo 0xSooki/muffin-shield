@@ -16,12 +16,12 @@ def find_similar_strings(target, string_list):
     print(min_distance)
     if min_distance == 0:
         return 1
-    elif min_distance < 3:
+    elif min_distance < 33:
         return 0
     else:
         return None
 
-
+"""""
 # Example usage
 target_string = "apple"
 string_list = ["appple", "app", "kiwi", "ple", "mango"]
@@ -31,7 +31,7 @@ if similar_string is not None:
     print(f"A similar string to '{target_string}' is '{similar_string}'.")
 else:
     print(f"No similar string found for '{target_string}'.")
-
+"""
 
 def capsCheckH(allCaps, wordCount):
     if (allCaps/wordCount > 0.7):
@@ -69,5 +69,7 @@ def domainCheck(url):
             l2 = 0
     return (l1+l2)/2
 
+def googleSearch(title):
+    find_similar_strings(title,search(title))
 
-print(domainCheck(url))
+print(googleSearch("Sofa in the sky: Furniture flies during Turkey storm"))

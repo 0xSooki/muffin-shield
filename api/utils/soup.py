@@ -36,9 +36,9 @@ def search(text):
     request_result = requests.get(url, headers=headers, cookies=cookies)
     soup = BeautifulSoup(request_result.text, "html.parser")
     heading_object = soup.find_all('h3')
-    print(heading_object)
+    resList = []
     for info in heading_object:
-        resList = resList + info.getText()
+        resList.append(info.getText())
     return resList
 
-print(search("Italy floods leave 13 dead and force 13,000 from their homes"))
+#print(search("Italy floods leave 13 dead and force 13,000 from their homes"))
