@@ -15,17 +15,20 @@ def get_base_domain(url):
 
 def extract_content(url):
     domain = get_base_domain(url)
-    if (domain in verified_sources.keys()):
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, 'html.parser')
+    if (domain not in verified_sources.keys()):
+        return None
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-        h1 = soup.find('h1')
+    h1 = soup.find('h1')
 
-        key = verified_sources[domain].split(':')
-        content = soup.find(key[0], attrs={key[1]: key[2]})
+    key = verified_sources[domain].split(':')
+    content = soup.find(key[0], attrs={key[1]: key[2]})
 
-        print(h1.text, content.text)
-        return (h1.text, content.text)
+    if (content is None or h1 is None):
+        return None
+
+    return (h1.text, content.text)
 
 
 def search(text):
@@ -40,3 +43,6 @@ def search(text):
     for info in heading_object:
         print(info.getText())
         print("------")
+
+
+extract_content("https://www.bbc.com/news/world-europe-65632655")
