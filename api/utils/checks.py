@@ -10,9 +10,9 @@ def find_similar_strings(target, string_list):
         distance = Levenshtein.distance(target, string)
         if distance < min_distance:
             min_distance = distance
-            print(min_distance)
+            most_similar_string = string
+            print(string)
             print(distance)
-    print(min_distance)
     if min_distance == 0:
         return 1
     elif min_distance < 3:
