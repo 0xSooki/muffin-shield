@@ -1,19 +1,19 @@
 from soup import *
-from difflib import SequenceMatcher
 import Levenshtein
 
 
 def find_similar_strings(target, string_list):
     min_distance = float('inf')
     most_similar_string = None
-
     for string in string_list:
+        print(target)
+        print(string)
         distance = Levenshtein.distance(target, string)
         if distance < min_distance:
             min_distance = distance
-            print(min_distance)
+            most_similar_string = string
+            print(string)
             print(distance)
-    print(min_distance)
     if min_distance == 0:
         return 1
     elif min_distance < 33:
@@ -24,7 +24,7 @@ def find_similar_strings(target, string_list):
 """""
 # Example usage
 target_string = "apple"
-string_list = ["appple", "app", "kiwi", "ple", "mango"]
+string_list = ["apppkhfuzfuzfle", "app", "kiwi", "ple", "mango"]
 similar_string = find_similar_strings(target_string, string_list)
 
 if similar_string is not None:
@@ -71,5 +71,5 @@ def domainCheck(url):
 
 def googleSearch(title):
     find_similar_strings(title,search(title))
-
-print(googleSearch("Sofa in the sky: Furniture flies during Turkey storm"))
+#11 ugyanaz 41 még jó
+#print(googleSearch("Sofa in the sky: Furniture flies during Turkey storm"))

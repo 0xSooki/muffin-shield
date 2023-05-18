@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from utils.lib import *
+from utils.checks import *
 from utils.soup import *
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
