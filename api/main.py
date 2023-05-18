@@ -3,8 +3,10 @@ from lib import *
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+
 class Item(BaseModel):
     url: str
+
 
 app = FastAPI()
 
@@ -17,10 +19,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 async def root():
     print(test())
     return {"message": test()}
+
 
 @app.post("/")
 async def root(item: Item):
