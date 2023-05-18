@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from lib import *
+from utils.lib import *
+from utils.soup import *
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -22,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    print(test())
+    print(capsCheck(extract_content(url)))
     return {"message": test()}
 
 

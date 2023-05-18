@@ -18,5 +18,25 @@ def capsCheck(content):
         if(word.isupper()):
             c += 1
     return (capsCheckH(c,words))
+
+
+a = ["co", "ru", "lo"]
+b = ["index", "origo"]
+def domainCheck(url) :
+    sep = url.rsplit('/')
+    dom = sep[2].rsplit('.')
+    l1 = 0
+    l2 = 1
+    for i in a:
+        if i == dom[-1]:
+            l1 = 1
+
+    for j in b:
+        if j == dom[1]:
+            l2 = 0
+    return (l1+l2)/2
+
+
 url= "https://www.origo.hu/tudomany/20230517-nem-ajanlja-a-szintetikus-es-a-termeszetes-edesitoszerek-hosszu-tavu-hasznalatat-a-who.html"
 print(capsCheck(extract_content(url)))
+print(domainCheck(url))
