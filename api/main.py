@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    print(capsCheck(extract_content(url)))
+    print(test())
     return {"message": test()}
 
 
