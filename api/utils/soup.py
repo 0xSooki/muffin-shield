@@ -8,9 +8,4 @@ def extract_content(url):
 
     h1 = soup.find('h1')
 
-    content = soup.find('article',{'class':'article-body'})
-    return content.text
-
-url = "https://www.origo.hu/tudomany/20230517-nem-ajanlja-a-szintetikus-es-a-termeszetes-edesitoszerek-hosszu-tavu-hasznalatat-a-who.html"
-
-extract_content(url)
+    return h1.text
