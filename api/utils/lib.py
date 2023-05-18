@@ -1,4 +1,5 @@
 from soup import extract_content
+from serpapi import GoogleSearch
 
 def test() -> str:
     return "Hello, world!"
@@ -40,3 +41,4 @@ def domainCheck(url) :
 url= "https://www.origo.hu/tudomany/20230517-nem-ajanlja-a-szintetikus-es-a-termeszetes-edesitoszerek-hosszu-tavu-hasznalatat-a-who.html"
 print(capsCheck(extract_content(url)))
 print(domainCheck(url))
+
