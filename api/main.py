@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from lib import *
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from fastapi.responses import JSONResponse
 
 class Item(BaseModel):
     url: str
