@@ -28,7 +28,7 @@ def extract_content(url):
     if (content is None or h1 is None):
         return None
 
-    return (h1.text, content.text)
+    return {"TITLE": h1.text, "TEXT": content.text}
 
 
 def search(text):

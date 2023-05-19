@@ -55,6 +55,13 @@ def capsCheckH(allCaps, wordCount):
         return 0
 
 
+def finalCheck(url):
+    cont = extract_content(url)
+    f1 = domainCheck(url)
+    f2 = capsCheck(cont)
+    return (f1*3+f2*2)/5
+
+
 def capsCheck(content):
     conList = content.split()
     filter(None, conList)
