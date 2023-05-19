@@ -15,11 +15,10 @@ async function CheckValidity(url) {
     },
   })
     .then(async function (res) {
-      console.log("Link sent successfully");
       let data = await res.json();
       console.log(data);
     })
-    .catch(function (error) {
-      console.error("Error sending link:", error);
+    .catch(function (err) {
+      console.log(err);
     });
 }
