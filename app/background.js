@@ -14,9 +14,10 @@ async function CheckValidity(url) {
       "Content-Type": "application/json",
     },
   })
-    .then(function (res) {
+    .then(async function (res) {
       console.log("Link sent successfully");
-      console.log(res);
+      let data = await res.json();
+      console.log(data);
     })
     .catch(function (error) {
       console.error("Error sending link:", error);
