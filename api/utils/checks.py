@@ -1,7 +1,4 @@
-from soup import *
-from sklearn.linear_model import LinearRegression
-import pandas as pd
-import numpy as np
+from utils.soup import *
 import Levenshtein
 
 
@@ -24,6 +21,7 @@ def find_similar_strings(target, string_list):
     else:
         return None
 
+
 def countClose(target, string_list):
     min_distance = float('inf')
     c = 0
@@ -37,7 +35,6 @@ def countClose(target, string_list):
     return c
 
 
-
 """""
 # Example usage
 target_string = "apple"
@@ -49,6 +46,7 @@ if similar_string is not None:
 else:
     print(f"No similar string found for '{target_string}'.")
 """
+
 
 def capsCheckH(allCaps, wordCount):
     if (allCaps/wordCount > 0.7):
@@ -86,7 +84,8 @@ def domainCheck(url):
             l2 = 0
     return (l1+l2)/2
 
+
 def googleSearch(title):
-    find_similar_strings(title,search(title))
-#11 ugyanaz 41 még jó
-#print(googleSearch("Sofa in the sky: Furniture flies during Turkey storm"))
+    find_similar_strings(title, search(title))
+# 11 ugyanaz 41 még jó
+# print(googleSearch("Sofa in the sky: Furniture flies during Turkey storm"))

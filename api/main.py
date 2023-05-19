@@ -5,10 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
-class Item(BaseModel):
-    url: str
-
-
 app = FastAPI()
 
 origins = ["*"]
@@ -22,12 +18,6 @@ app.add_middleware(
 
 
 @app.get("/")
-async def root():
-    title=extract_content(url)
-    print(capsCheck(title))
-    return {"message": test()}
-
-
-@app.post("/")
-async def root(item: Item):
-    print(item.url)
+async def check(url: str):
+    print(url)
+    return {"validity": url}
