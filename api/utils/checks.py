@@ -1,4 +1,7 @@
 from soup import *
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+import numpy as np
 import Levenshtein
 
 
@@ -20,6 +23,20 @@ def find_similar_strings(target, string_list):
         return 0
     else:
         return None
+
+def countClose(target, string_list):
+    min_distance = float('inf')
+    c = 0
+    most_similar_string = None
+    for string in string_list:
+        print(target)
+        print(string)
+        distance = Levenshtein.distance(target, string)
+        if distance < 45:
+            c += 1
+    return c
+
+
 
 """""
 # Example usage
