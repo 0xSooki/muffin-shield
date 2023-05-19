@@ -1,1 +1,1 @@
-# Muffin Shield
+# VeriFilter: Unmasking Truth in News
